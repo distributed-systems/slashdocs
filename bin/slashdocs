@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+import SlashDocs from '../src/SlashDocs.mjs';
+
+
+(async () => {
+    const slashdocs = new SlashDocs();
+
+    // generate docs
+    await esm.generate();
+})().catch((err) => {
+    console.error(err.message);
+    process.exit(err.exitCode || 1);
+});
